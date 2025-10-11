@@ -19,7 +19,7 @@ class NoteSuccess(LoginRequiredMixin, generic.TemplateView):
 class NoteBase(LoginRequiredMixin):
     """Базовый класс для остальных CBV."""
     model = Note
-    success_url = reverse_lazy('notes:success')
+    success_url = reverse_lazy('notes:list')
 
     def get_queryset(self):
         """Пользователь может работать только со своими заметками."""

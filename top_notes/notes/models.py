@@ -18,8 +18,8 @@ class Note(models.Model):
         db_index=True,
     )
     description = models.TextField(
-        'Текст заметки', 
-        null=True, 
+        'Текст заметки',
+        null=True,
         blank=True
     )
     created_at = models.DateTimeField(auto_now_add=True)
@@ -34,7 +34,7 @@ class Note(models.Model):
     class Meta:
         verbose_name = 'Заметки'
         verbose_name_plural = 'Заметки'
-        ordering = ['-created_at']
+        ordering = ['-updated_at']
 
     def get_absolute_url(self):
         return reverse("notes:detail", kwargs={"pk": self.pk})

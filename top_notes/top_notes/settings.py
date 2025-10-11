@@ -1,4 +1,7 @@
+import os
 from pathlib import Path
+
+from django.urls import reverse_lazy
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -35,7 +38,7 @@ ROOT_URLCONF = 'top_notes.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,7 +75,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
 TIME_ZONE = 'UTC'
 
@@ -82,8 +85,21 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Настройки для разработки
 STATIC_URL = '/static/'
+
+# Папка, куда collectstatic соберет файлы для продакшена
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Дополнительные папки со статикой
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.User'
+
+LOGIN_URL = reverse_lazy('users:login')
+
+LOGIN_REDIRECT_URL = reverse_lazy('notes:home')

@@ -1,8 +1,9 @@
+
 <header>
-  <nav class="navbar navbar-light" style="background-color: lightskyblue">
-    <div class="container">
+  <nav class="navbar navbar-light navigation">
+    <div class="container nav-padding">
       <a class="navbar-brand" href="{% url 'notes:home' %}">
-        <span class="text-danger"><b>Ya</b></span>Note
+        <span class="title"><b>Заметки</b></span>
       </a>
       {% if user.is_authenticated %}
           <div class="nav-item align-self-center mt-1">
@@ -13,20 +14,20 @@
       <ul class="nav nav-pills">
         {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'notes:list' %}">Список заметок</a>
+            <a class="nav-link my-link {% if request.resolver_match.url_name == 'list' %}activel{% endif %}" href="{% url 'notes:list' %}">Список заметок</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'notes:add' %}">Новая заметка</a>
+            <a class="nav-link my-link {% if request.resolver_match.url_name == 'add' %}activel{% endif %}" href="{% url 'notes:add' %}">Новая заметка</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'users:logout' %}">Выйти</a>
+            <a class="nav-link my-link {% if request.resolver_match.url_name == 'logout' %}activel{% endif %}" href="{% url 'users:logout' %}">Выйти</a>
           </li>
         {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'users:login' %}">Войти</a>
+            <a class="nav-link my-link {% if request.resolver_match.url_name == 'login' %}activel{% endif %}" href="{% url 'users:login' %}">Войти</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'users:signup' %}">Регистрация</a>
+            <a class="nav-link my-link {% if request.resolver_match.url_name == 'signup' %}activel{% endif %}" href="{% url 'users:signup' %}">Регистрация</a>
           </li>
         {% endif %}
       </ul>
