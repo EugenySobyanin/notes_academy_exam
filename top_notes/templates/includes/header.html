@@ -14,6 +14,9 @@
       <ul class="nav nav-pills">
         {% if user.is_authenticated %}
           <li class="nav-item">
+            <a class="nav-link my-link {% if request.resolver_match.url_name == 'home' %}activel{% endif %}" href="{% url 'notes:home' %}">На главную</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link my-link {% if request.resolver_match.url_name == 'list' %}activel{% endif %}" href="{% url 'notes:list' %}">Список заметок</a>
           </li>
           <li class="nav-item">

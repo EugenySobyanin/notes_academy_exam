@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
   <hr>
-  <h3>{{ note.title }}</h3>
+  <h3 class="h-text shadow">{{ note.title }}</h3>
   <p>{{ note.description }}</p>
   <p>Дата создания: {{ note.created_at|date:"d/m/Y H:i" }}</p>
   <p>Дата последнего обновления: {{ note.updated_at|date:"d/m/Y H:i" }}</p>
   <hr>
-  <p>
-    <a class="my-link" href="{% url 'notes:edit' pk=note.pk %}">Редактировать</a>
+  <p class="main-li" style="margin: 0">
+    <a class="nav-link my-link" href="{% url 'notes:edit' pk=note.pk %}" style="padding-left: 0;">Редактировать</a>
   </p>
-  <p >
-    <a class="my-link" href="{% url 'notes:delete' pk=note.pk %}">Удалить</a>
-  </p>
+  <p class="main-li" style="margin: 0">
+    <a class="nav-link my-link" href="{% url 'notes:delete' pk=note.pk %}" style="padding-left: 0;">Удалить</a>
+  </p >
 {% endblock content %}
