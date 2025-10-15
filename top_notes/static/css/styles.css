@@ -1,0 +1,65 @@
+/*Общее*/
+.regular-text {
+    color: #d6d6d6;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 100%;
+}
+
+.my-link {
+    color: #d6d6d6 !important;           /* светло-серый - основной */
+    border-radius: 5px;
+}
+
+.my-link:hover {
+    color: #a8e6cf !important;           /* мятный при наведении */
+    background-color: rgba(168, 230, 207, 0.1) !important;
+}
+
+.my-link.activel {
+    color: #a8e6cf !important;           /* мятный для активной */
+    border-bottom: 2px solid #043825;
+}
+
+.shadow {
+    text-shadow: 0 0 10px #066b46;
+}
+
+.h-text {
+    color: #a8e6cf;
+}
+
+/*Навигационная панель*/
+
+.navigation {
+    background-color: #1a1a1a;
+}
+
+.nav-padding {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.title {
+    color: #a8e6cf;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.6rem;
+    
+}
+
+/*body*/
+
+.main-body {
+    background-color: #0a0a0a;
+}
+
+/*main*/
+
+.main-block {
+    padding-left: 10%;
+}
+
+.main-li {
+    width: 40%;
+}

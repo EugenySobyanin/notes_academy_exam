@@ -1,0 +1,69 @@
+/*Пагинация*/
+
+.pagination {
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.page-item {
+    margin: 0 5px;
+}
+
+/* Ваши кастомные стили ссылок */
+.page-link.my-link {
+    color: #d6d6d6 !important;
+    background-color: transparent !important;
+    border: 1px solid #d6d6d6 !important;
+    border-radius: 5px !important;
+    padding: 8px 12px !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    display: block !important;
+}
+
+.page-link.my-link:hover {
+    color: #a8e6cf !important;
+    background-color: rgba(168, 230, 207, 0.1) !important;
+    border-color: #a8e6cf !important;
+    transform: translateY(-2px);
+}
+
+/* Активная страница */
+.page-item.active .page-link.my-link {
+    color: #a8e6cf !important;
+    background-color: rgba(168, 230, 207, 0.15) !important;
+    border-color: #043825 !important;
+    border-bottom: 2px solid #043825 !important;
+    font-weight: bold;
+}
+
+/* Отключенные кнопки (предыдущая/следующая когда недоступны) */
+.page-item.disabled .page-link.my-link {
+    color: #6c757d !important;
+    background-color: transparent !important;
+    border-color: #6c757d !important;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Анимация для плавного появления */
+.pagination {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Тень для глубины */
+.page-link.my-link {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.page-link.my-link:hover {
+    box-shadow: 0 4px 8px rgba(168, 230, 207, 0.2);
+}
